@@ -1,0 +1,19 @@
+- hosts: 172.31.15.250
+      become: yes
+      tasks:
+    - name: to install apache server
+  yum:
+    name: httpd
+    state: present
+    - name: to create index.html to apache server
+    copy: html file
+    src: index.html
+    dest: /var/www/html
+    - name: start and enable apache server
+    service:
+    name: httpd start and enable
+    state: start and enable
+    become: yes
+
+      
+    
